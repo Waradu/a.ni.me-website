@@ -7,14 +7,15 @@
         <ThemeToggle @click="toggleTheme" />
       </div>
       <div class="github">
-        <NuxtLink to="https://github.com/waradu/a.ni.me" aria-label="Github" target="_blank" >
+        <NuxtLink to="https://github.com/waradu/a.ni.me" aria-label="Github" target="_blank">
           <Github />
         </NuxtLink>
       </div>
     </header>
     <section class="hero">
       <header class="title">
-        <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95" sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
+        <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
+          sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
         <h1>A • NI • ME</h1>
       </header>
       <section class="description">
@@ -36,8 +37,10 @@
       <div class="kanji an" :class="theme">暗</div>
       <div class="kanji mei" :class="theme">明</div>
       <div class="images">
-        <NuxtImg src="/images/app.png" alt="app preview" :class="{ current: theme == 'light' }" width="900" sizes="900px" height="484" />
-        <NuxtImg src="/images/app_dark.png" alt="app preview" class="dark" :class="{ current: theme == 'dark' }" width="900" sizes="900px" height="484" />
+        <NuxtImg src="/images/app.png" alt="app preview" :class="{ current: theme == 'light' }" width="900"
+          sizes="900px" height="484" />
+        <NuxtImg src="/images/app_dark.png" alt="app preview" class="dark" :class="{ current: theme == 'dark' }"
+          width="900" sizes="900px" height="484" />
       </div>
     </section>
     <section class="text">
@@ -47,10 +50,10 @@
 </template>
 
 <script lang="ts" setup>
-import Apple from '~/assets/svg/apple.svg'
-import Windows from '~/assets/svg/windows.svg'
-import Github from '~/assets/svg/github.svg'
-import ThemeToggle from '~/assets/svg/theme_toggle.svg'
+const Apple = defineAsyncComponent(() => import('~/assets/svg/apple.svg'));
+const Windows = defineAsyncComponent(() => import('~/assets/svg/windows.svg'));
+const ThemeToggle = defineAsyncComponent(() => import('~/assets/svg/theme_toggle.svg'));
+const Github = defineAsyncComponent(() => import('~/assets/svg/github.svg'));
 
 const themeCookie = useCookie('a.ni.me-theme')
 themeCookie.value = themeCookie.value == 'light' || themeCookie.value == 'dark' ? themeCookie.value : 'light'
@@ -326,7 +329,7 @@ const toggleTheme = () => {
         flex-direction: column;
         gap: 0;
 
-        a {
+        .button {
           justify-content: center;
         }
       }
