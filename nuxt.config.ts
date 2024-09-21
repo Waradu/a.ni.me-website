@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:url",
-          content: "https://anime.waradu.dev",
+          content: "https://a.ni.me.waradu.dev",
         },
       ],
     },
