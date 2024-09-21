@@ -14,7 +14,7 @@
     </header>
     <section class="hero">
       <header class="title">
-        <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
+        <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95" sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
         <h1>A • NI • ME</h1>
       </header>
       <section class="description">
@@ -310,6 +310,7 @@ const toggleTheme = () => {
 
         img {
           width: 200px;
+          height: 63px;
         }
 
         h1 {
