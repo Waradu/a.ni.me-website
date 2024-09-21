@@ -56,10 +56,5 @@ export default defineNuxtConfig({
       ],
     },
   },
-  nitro: {
-    routeRules: {
-      "/images/**": { headers: { "cache-control": "max-age=604800" } },
-    },
-  },
   ssr: false
 });
