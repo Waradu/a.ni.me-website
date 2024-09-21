@@ -61,4 +61,5 @@ export default defineNuxtConfig({
       "/images/**": { headers: { "cache-control": "max-age=86400" } },
     },
   },
+  ssr: false
 });
