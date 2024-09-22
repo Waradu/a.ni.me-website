@@ -2,6 +2,16 @@
   <NuxtPage />
 </template>
 
+<script lang="ts" setup>
+onMounted(() => {
+  const transition = document.getElementById("html, body, #__nuxt");
+
+  if (transition) {
+    transition.style.transition = "all .2s !important;";
+  }
+})
+</script>
+
 <style lang="scss">
 * {
   margin: 0;
@@ -23,13 +33,12 @@ body,
   width: 100%;
   height: 100%;
   font-family: Inter, sans-serif;
-  background-color: #f5f5f5;
-  color: black;
-  transition: all .2s !important;
+  background-color: #0c0c0c !important;
+  color: white;
 
-  &:has(main.dark) {
-    background-color: #0c0c0c;
-    color: white;
+  &:has(main.light) {
+    background-color: #f5f5f5 !important;
+    color: black;
   }
 }
 </style>

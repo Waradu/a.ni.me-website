@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      htmlAttrs: { lang: "en" },
+      htmlAttrs: { lang: "en", style: "background-color: black;" },
       title: "a.ni.me",
       meta: [
         { charset: "utf-8" },
