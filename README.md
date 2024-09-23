@@ -1,1 +1,1 @@
-More info [here](https://github.com/Waradu/a.ni.me)
+More info [here](https://github.com/Waradu/a.ni.me#readme)
