@@ -13,6 +13,9 @@
       </div>
     </header>
     <section class="hero">
+      <div class="version" v-if="version != ''" :class="theme">
+        v{{ version }} just released 🎉
+      </div>
       <header class="title">
         <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
           sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
@@ -61,6 +64,8 @@ themeCookie.value = themeCookie.value == 'light' || themeCookie.value == 'dark' 
 const theme = ref(themeCookie.value);
 const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c"
 
+const version = ref("")
+
 useHead({
   meta: [
     { name: 'theme-color', content: color }
@@ -78,6 +83,12 @@ const toggleTheme = () => {
     ]
   })
 }
+
+onMounted(async () => {
+  const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
+  const json = await data.json()
+  version.value = json.version;
+})
 </script>
 
 <style lang="scss">
@@ -86,7 +97,7 @@ const toggleTheme = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px;
+  padding-top: 100px;
   padding-bottom: 100px;
   gap: 60px;
   overflow: hidden;
@@ -157,6 +168,24 @@ const toggleTheme = () => {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+
+    .version {
+      padding: 4px;
+      padding-inline: 12px;
+      background-color: #00000010;
+      border: 1px solid #00000020;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      font-size: 14px;
+
+      &.dark {
+        background-color: #ffffff10;
+        border: 1px solid #ffffff20;
+      }
+    }
 
     .title {
       display: flex;
