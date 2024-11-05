@@ -171,13 +171,13 @@ onMounted(async () => {
 
     .version {
       padding: 4px;
+      padding-bottom: 5px;
       padding-inline: 12px;
       background-color: #00000010;
       border: 1px solid #00000020;
       border-radius: 100px;
       display: flex;
       align-items: center;
-      padding-bottom: 5px;
       margin-bottom: 20px;
       font-size: 14px;
 
