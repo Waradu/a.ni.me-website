@@ -13,8 +13,8 @@
       </div>
     </header>
     <section class="hero">
-      <div class="version" v-if="version != ''" :class="theme">
-        v{{ version }} just released 🎉
+      <div class="version" :class="version == '' ? 'hidden ' : '' + theme">
+        v{{ version != '' ? version : '0.0.0' }} just released 🎉
       </div>
       <header class="title">
         <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
@@ -180,10 +180,15 @@ onMounted(async () => {
       align-items: center;
       margin-bottom: 20px;
       font-size: 14px;
+      transition: opacity .2s ease-in-out;
 
       &.dark {
         background-color: #ffffff10;
         border: 1px solid #ffffff20;
+      }
+
+      &.hidden {
+        opacity: 0;
       }
     }
 
