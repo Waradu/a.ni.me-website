@@ -14,7 +14,7 @@
     </header>
     <section class="hero">
       <div class="version" :class="version == '' ? 'hidden ' : '' + theme">
-        v{{ version != '' ? version : '0.0.0' }} just released 🎉
+        {{ version != '' ? version : '0.0.0' }} just released 🎉
       </div>
       <header class="title">
         <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
@@ -85,9 +85,14 @@ const toggleTheme = () => {
 }
 
 onMounted(async () => {
-  const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
-  const json = await data.json()
-  version.value = json.version;
+  try {
+    const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
+    const json = await data.json()
+    version.value = "v" + json.version;
+  } catch {
+    console.log("failed to fetch version");
+    version.value = "A new version"
+  }
 })
 </script>
 
