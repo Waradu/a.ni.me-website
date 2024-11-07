@@ -13,7 +13,7 @@
       </div>
     </header>
     <section class="hero">
-      <div class="version" :class="version == '' ? 'hidden ' : '' + theme">
+      <div class="version" :class="version == '' ? 'hidden ' : '' + theme" :title="date != '' ? 'Released ' + date : ''">
         {{ version != '' ? version : '0.0.0' }} just released 🎉
       </div>
       <header class="title">
@@ -65,6 +65,7 @@ const theme = ref(themeCookie.value);
 const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c"
 
 const version = ref("")
+const date = ref("")
 
 useHead({
   meta: [
@@ -89,11 +90,27 @@ onMounted(async () => {
     const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
     const json = await data.json()
     version.value = "v" + json.version;
+    date.value = relativeTimeFromNow(json.pub_date);
   } catch {
     console.log("failed to fetch version");
     version.value = "A new version"
   }
 })
+
+function relativeTimeFromNow(dateString: string): string {
+  const inputDate = new Date(dateString);
+  const now = new Date();
+  const diffInSeconds = Math.floor((now.getTime() - inputDate.getTime()) / 1000);
+
+  if (diffInSeconds < 60) return '1 minute ago';
+  if (diffInSeconds < 3600) return `${Math.floor(diffInSeconds / 60)} minutes ago`;
+  if (diffInSeconds < 86400) return `${Math.floor(diffInSeconds / 3600)} hours ago`;
+  if (diffInSeconds < 604800) return `${Math.floor(diffInSeconds / 86400)} days ago`;
+  if (diffInSeconds < 2419200) return `${Math.floor(diffInSeconds / 604800)} weeks ago`;
+  if (diffInSeconds < 31536000) return `${Math.floor(diffInSeconds / 2419200)} months ago`;
+
+  return "";
+}
 </script>
 
 <style lang="scss">
@@ -186,6 +203,7 @@ onMounted(async () => {
       margin-bottom: 20px;
       font-size: 14px;
       transition: opacity .2s ease-in-out;
+      cursor: default;
 
       &.dark {
         background-color: #ffffff10;
