@@ -42,9 +42,9 @@
       <div class="kanji mei" :class="theme">明</div>
       <div class="images">
         <NuxtImg src="app.png" alt="app preview" :class="{ current: theme == 'light' }" width="900" sizes="900px"
-          height="482" />
+          height="484" />
         <NuxtImg src="app_dark.png" alt="app preview" class="dark" :class="{ current: theme == 'dark' }" width="900"
-          sizes="900px" height="482" />
+          sizes="900px" height="484" />
       </div>
     </section>
     <section class="text">
@@ -298,7 +298,6 @@ function relativeTimeFromNow(dateString: string): string {
 
       img {
         width: 900px;
-        height: 482px;
         border: 2px solid #00000020;
         border-radius: 12px;
 
