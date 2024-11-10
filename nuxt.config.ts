@@ -56,8 +56,5 @@ export default defineNuxtConfig({
       ],
     },
   },
-  ssr: false,
-  image: {
-    dir: "assets/images",
-  },
+  ssr: false
 });
