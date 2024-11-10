@@ -13,11 +13,12 @@
       </div>
     </header>
     <section class="hero">
-      <div class="version" :class="version == '' ? 'hidden ' : '' + theme" :title="date != '' ? 'Released ' + date : ''">
+      <div class="version" :class="version == '' ? 'hidden ' : '' + theme"
+        :title="date != '' ? 'Released ' + date : ''">
         {{ version != '' ? version : '0.0.0' }} just released 🎉
       </div>
       <header class="title">
-        <NuxtImg src="/images/hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
+        <NuxtImg src="hero.png" alt="anime japanese" style="max-height: 100px;" width="300" height="95"
           sizes="(max-width: 1000px) 200px, 300px" :class="theme" />
         <h1>A • NI • ME</h1>
       </header>
@@ -40,10 +41,10 @@
       <div class="kanji an" :class="theme">暗</div>
       <div class="kanji mei" :class="theme">明</div>
       <div class="images">
-        <NuxtImg src="/images/app.png" alt="app preview" :class="{ current: theme == 'light' }" width="900"
+        <NuxtImg src="app.png" alt="app preview" :class="{ current: theme == 'light' }" width="900" sizes="900px"
+          height="484" />
+        <NuxtImg src="app_dark.png" alt="app preview" class="dark" :class="{ current: theme == 'dark' }" width="900"
           sizes="900px" height="484" />
-        <NuxtImg src="/images/app_dark.png" alt="app preview" class="dark" :class="{ current: theme == 'dark' }"
-          width="900" sizes="900px" height="484" />
       </div>
     </section>
     <section class="text">
@@ -58,44 +59,44 @@ const Windows = defineAsyncComponent(() => import('~/assets/svg/windows.svg'));
 const ThemeToggle = defineAsyncComponent(() => import('~/assets/svg/theme_toggle.svg'));
 const Github = defineAsyncComponent(() => import('~/assets/svg/github.svg'));
 
-const themeCookie = useCookie('a.ni.me-theme')
-themeCookie.value = themeCookie.value == 'light' || themeCookie.value == 'dark' ? themeCookie.value : 'light'
+const themeCookie = useCookie('a.ni.me-theme');
+themeCookie.value = themeCookie.value == 'light' || themeCookie.value == 'dark' ? themeCookie.value : 'light';
 
 const theme = ref(themeCookie.value);
-const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c"
+const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c";
 
-const version = ref("")
-const date = ref("")
+const version = ref("");
+const date = ref("");
 
 useHead({
   meta: [
     { name: 'theme-color', content: color }
   ]
-})
+});
 
 const toggleTheme = () => {
   theme.value = theme.value == "light" ? "dark" : "light";
-  themeCookie.value = theme.value
-  const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c"
+  themeCookie.value = theme.value;
+  const color = theme.value == "light" ? "#f5f5f5" : "#0c0c0c";
 
   useHead({
     meta: [
       { name: 'theme-color', content: color }
     ]
-  })
-}
+  });
+};
 
 onMounted(async () => {
   try {
     const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
-    const json = await data.json()
+    const json = await data.json();
     version.value = "v" + json.version;
     date.value = relativeTimeFromNow(json.pub_date);
   } catch {
     console.log("failed to fetch version");
-    version.value = "A new version"
+    version.value = "A new version";
   }
-})
+});
 
 function relativeTimeFromNow(dateString: string): string {
   const inputDate = new Date(dateString);
