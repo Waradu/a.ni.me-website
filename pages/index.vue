@@ -32,7 +32,7 @@
           <Windows /> Download for Windows
         </NuxtLink>
         <div :class="theme" class="button">
-          <Apple /> Mac comming soon
+          <Apple /> Mac coming soon
         </div>
       </section>
     </section>
