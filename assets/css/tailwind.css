@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "CommitMono", monospace;
+  
+  --color-theme: white;
+  --color-background: #f5f5f5:
+  --color-border: #00000020:
+  --color-elevated: #00000010:
+  --color-muted: #444444;
+}
+
+@layer base {
+  @variant dark {
+    --color-theme: black;
+    --color-background: #0c0c0c:
+    --color-border: #ffffff20:
+    --color-elevated: #ffffff10:
+    --color-muted: #aaaaaa;
+  }
+}

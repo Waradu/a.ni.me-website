@@ -1,24 +1,43 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-  modules: ["nuxt-svgo", "@nuxt/image"],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          silenceDeprecations: ["legacy-js-api"],
-        },
-      },
-    },
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
+    "@nuxt/eslint",
+    "@nuxtjs/seo",
+    "motion-v/nuxt",
+    "@nuxt/fonts",
+    "@nuxtjs/plausible",
+    "nuxt-svgo",
+    "@nuxt/image",
+    "@nuxtjs/color-mode",
+  ],
+
+  tailwindcss: {
+    exposeConfig: true,
+    editorSupport: true,
+    viewer: true,
   },
-  svgo: {
-    autoImportPath: false,
+
+  fonts: {
+    provider: "bunny",
   },
+
+  plausible: {
+    ignoredHostnames: ["localhost", "127.0.0.1"],
+    domain: "a.ni.me.waradu.dev",
+    apiHost: "https://plausible.wireway.ch",
+    autoOutboundTracking: true,
+    proxy: true,
+  },
+
   app: {
     head: {
-      htmlAttrs: { lang: "en", style: "background-color: black;" },
-      title: "a.ni.me",
+      htmlAttrs: { lang: "en" },
+      title: "A • NI • ME",
+      titleTemplate: "",
       meta: [
         { charset: "utf-8" },
         {
@@ -27,7 +46,6 @@ export default defineNuxtConfig({
         },
         { name: "author", content: "Waradu" },
         {
-          hid: "description",
           name: "description",
           content:
             "Can't keep up with all the anime you've watched? Neither can we! Organize your list, hide the for research purpose ones and keep things under control. We won't tell.",
@@ -56,5 +74,10 @@ export default defineNuxtConfig({
       ],
     },
   },
-  ssr: false
+
+  svgo: {
+    autoImportPath: false,
+    defaultImport: "component",
+    dts: true,
+  },
 });

@@ -7,15 +7,39 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/image": "1.8.1",
-    "@nuxt/kit": "^3.14.1592",
-    "nuxt": "^3.14.1592",
-    "nuxt-svgo": "^4.0.9",
-    "sass": "^1.81.0",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "@nuxt/eslint": "1.5.0",
+    "@nuxt/fonts": "0.11.4",
+    "@nuxt/image": "1.10.0",
+    "@nuxtjs/color-mode": "3.5.2",
+    "@nuxtjs/plausible": "1.2.0",
+    "@nuxtjs/seo": "3.1.0",
+    "@nuxtjs/tailwindcss": "7.0.0-beta.0",
+    "@types/axios": "^0.14.4",
+    "@vueuse/nuxt": "13.5.0",
+    "@waradu/keyboard": "^4.3.0",
+    "axios": "^1.10.0",
+    "eslint": "^9.30.1",
+    "lucide-vue-next": "^0.525.0",
+    "motion-v": "^1.4.0",
+    "nuxt": "^3.17.6",
+    "nuxt-svgo": "4.2.3",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "wirekvs-js": "^1.0.2"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@tailwindcss/oxide",
+    "esbuild",
+    "unrs-resolver",
+    "vue-demi"
+  ],
+  "patchedDependencies": {
+    "wirekvs-js@1.0.2": "patches/wirekvs-js@1.0.2.patch"
   }
 }
