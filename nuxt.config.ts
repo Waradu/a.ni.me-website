@@ -23,6 +23,10 @@ export default defineNuxtConfig({
 
   fonts: {
     provider: "bunny",
+    defaults: {
+      weights: ["300", "400", "900"],
+      styles: ["normal", "italic"],
+    },
   },
 
   plausible: {

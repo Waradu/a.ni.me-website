@@ -4,8 +4,9 @@
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-mono: "CommitMono", monospace;
-  
+
   --color-theme: black;
+  --color-theme-inverset: white;
   --color-background: #f5f5f5;
   --color-border: #00000020;
   --color-elevated: #00000010;
@@ -16,10 +17,15 @@
 @layer base {
   @variant dark {
     --color-theme: white;
+    --color-theme-inverset: black;
     --color-background: #0c0c0c;
     --color-border: #ffffff20;
     --color-elevated: #ffffff10;
     --color-alt: #aaaaaa;
     --color-muted: #b6b6b6;
+  }
+
+  html {
+    @apply bg-background;
   }
 }
