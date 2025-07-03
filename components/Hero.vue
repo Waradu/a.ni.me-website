@@ -1,5 +1,6 @@
 <template>
   <section class="flex flex-col gap-8 lg:gap-12 items-center">
+    <Version />
     <div class="flex flex-col items-center gap-3">
       <img
         src="/images/hero.png"
