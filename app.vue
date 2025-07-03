@@ -1,5 +1,5 @@
 <template>
-  <main class="size-full bg-background">
+  <main class="size-full bg-background flex flex-col">
     <Header />
     <NuxtPage />
   </main>

@@ -30,6 +30,8 @@
   "trustedDependencies": [
     "@tailwindcss/oxide",
     "esbuild",
+    "sharp",
+    "better-sqlite3",
     "vue-demi",
     "@parcel/watcher",
   ],
