@@ -24,7 +24,7 @@
         alt="app preview dark"
         width="900"
         height="484"
-        class="w-[900px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-xl hidden dark:block"
+        class="min-w-[900px] min-h-[484px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-xl hidden dark:block"
         loading="eager"
       />
     </div>
