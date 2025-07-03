@@ -12,7 +12,13 @@
         Waradu
       </NuxtLink>
     </div>
-    <div class="flex p-2 transition hover:text-theme" @click="toggle">
+    <div
+      class="flex p-2 transition hover:text-theme"
+      @click="toggle"
+      :key="mode.value"
+      title="Toggle darkmode"
+      v-tippy="{ offset: [0, -2] }"
+    >
       <component
         :is="mode.value == 'dark' ? LucideSun : LucideMoon"
         class="size-5"

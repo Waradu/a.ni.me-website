@@ -1,11 +1,13 @@
 <template>
   <div class="h-8">
     <motion.div
-      class="flex items-center h-full px-3 bg-elevated border border-border rounded-full text-sm"
+      class="flex items-center h-full px-3 bg-elevated border border-border rounded-full text-sm select-none"
       :initial="{ opacity: 0, scale: 0 }"
       :animate="{ opacity: 1, scale: 1 }"
       v-if="version"
+      :key="date"
       :title="`Released ${date}`"
+      v-tippy
     >
       v{{ version != "" ? version : "0.0.0" }} just released 🎉
     </motion.div>
