@@ -29,8 +29,10 @@
     "motion-v": "^1.4.0",
     "nuxt": "^3.17.6",
     "nuxt-svgo": "4.2.3",
+    "tippy.js": "^6.3.7",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1",
+    "vue-tippy": "^6.7.1",
     "wirekvs-js": "^1.0.2"
   },
   "trustedDependencies": [

@@ -20,7 +20,9 @@
     </div>
     <div class="w-48 flex justify-end">
       <NuxtLink to="https://github.com/waradu/a.ni.me" target="_blank">
-        <SvglGitHubLogo class="!size-5 transition hover:text-theme" />
+        <SvglGitHubLogo
+          class="!size-5 dark:invert transition hover:text-theme"
+        />
       </NuxtLink>
     </div>
   </header>

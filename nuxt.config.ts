@@ -76,6 +76,23 @@ export default defineNuxtConfig({
           content: "https://a.ni.me.waradu.dev",
         },
       ],
+      link: [
+        {
+          rel: "preload",
+          as: "image",
+          href: "/images/hero.png",
+        },
+        {
+          rel: "preload",
+          as: "image",
+          href: "/images/app.png",
+        },
+        {
+          rel: "preload",
+          as: "image",
+          href: "/images/app_dark.png",
+        },
+      ],
     },
   },
 
@@ -87,6 +104,7 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: "",
+    storageKey: "a.ni.me-theme",
     preference: "light",
     fallback: "light",
   },
