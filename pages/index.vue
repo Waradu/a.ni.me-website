@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col items-center gap-20 py-16 text-theme">
+  <div class="w-full flex flex-col items-center gap-16 lg:gap-20 py-16 text-theme">
     <Version />
     <Hero />
     <Preview />

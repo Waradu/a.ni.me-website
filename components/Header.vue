@@ -1,8 +1,8 @@
 <template>
   <header
-    class="w-full select-none h-14 flex p-5 items-center justify-between text-muted"
+    class="w-full select-none h-12 lg:h-14 flex p-4 lg:p-5 items-center justify-between text-muted"
   >
-    <div class="text-sm w-48">
+    <div class="text-sm w-32">
       by
       <NuxtLink
         class="transition hover:text-theme underline"
@@ -24,7 +24,7 @@
         class="size-5"
       />
     </div>
-    <div class="w-48 flex justify-end">
+    <div class="w-32 flex justify-end">
       <NuxtLink to="https://github.com/waradu/a.ni.me" target="_blank">
         <SvglGitHubLogo
           class="!size-5 dark:invert transition hover:text-theme"

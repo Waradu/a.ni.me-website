@@ -1,26 +1,24 @@
 <template>
-  <section class="flex flex-col gap-12">
+  <section class="flex flex-col gap-8 lg:gap-12 items-center">
     <div class="flex flex-col items-center gap-3">
       <img
         src="/images/hero.png"
         alt="anime japanese"
         style="max-height: 100px"
-        width="300"
-        height="95"
         sizes="(max-width: 1000px) 200px, 300px"
-        class="w-[300px] select-none dark:invert"
+        class="w-56 lg:w-72 select-none dark:invert"
         loading="eager"
       />
-      <h1 class="text-6xl font-black">A • NI • ME</h1>
+      <h1 class="text-5xl lg:text-6xl font-black">A • NI • ME</h1>
     </div>
-    <div class="text-center w-[540px]">
+    <div class="text-center w-[calc(100%-40px)] lg:w-[540px]">
       Can't keep up with all the anime you've watched? Neither can we!
-      <br />
+      <br class="hidden lg:inline" />
       Organize your list, hide the
       <span class="italic">for research purpose</span>
       ones and keep things under control. We won't tell.
     </div>
-    <div class="flex gap-4">
+    <div class="flex gap-2 lg:gap-4 flex-col lg:flex-row items-center">
       <NuxtLink
         to="https://github.com/Waradu/a.ni.me/releases"
         target="_blank"

@@ -13,5 +13,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     theme: "custom",
     arrow: false,
     hideOnClick: false,
+    delay: [200, 0]
   });
 });
