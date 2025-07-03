@@ -80,4 +80,10 @@ export default defineNuxtConfig({
     defaultImport: "component",
     dts: true,
   },
+
+  colorMode: {
+    classSuffix: "",
+    preference: "light",
+    fallback: "light",
+  },
 });
