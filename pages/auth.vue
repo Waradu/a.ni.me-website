@@ -59,7 +59,7 @@
       </div>
     </div>
     <span v-else-if="error" :title="error.message" v-tippy>
-      An error occurred while logging in.
+      {{ token ? "An error occurred while logging in." : "No token found." }}
       <a href="/api/auth" class="text-muted underline"> Try again? </a>
     </span>
     <span class="flex gap-2 items-center text-muted" v-else>
