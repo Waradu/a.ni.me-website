@@ -10,9 +10,9 @@
         />
         <div class="flex flex-col">
           <div class="text-xl">{{ user.name }}</div>
-          <NuxtLink to="/api/auth" class="text-xs text-muted underline -mt-1">
+          <a href="/api/auth" class="text-xs text-muted underline -mt-1">
             use another account?
-          </NuxtLink>
+          </a>
         </div>
       </div>
       <div class="w-64 h-[1px] bg-border rounded-full my-2"></div>
@@ -44,9 +44,7 @@
     </div>
     <span v-else-if="error">
       An error occurred while logging in.
-      <NuxtLink to="/api/auth" class="text-muted underline">
-        Try again?
-      </NuxtLink>
+      <a href="/api/auth" class="text-muted underline"> Try again? </a>
     </span>
     <span class="flex gap-2 items-center text-muted" v-else>
       <LucideLoader class="size-4 animate-spin" />
