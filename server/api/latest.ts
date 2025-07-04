@@ -18,7 +18,9 @@ export default defineEventHandler(async (event) => {
     } else if (!latestPrerelease) prerelease = false;
     else if (!latest) prerelease = true;
 
-    return prerelease ? latestPrerelease : latest;
+    const result = (prerelease ? latestPrerelease : latest) as Latest;
+
+    return result;
   } catch (e) {
     console.error(e);
 

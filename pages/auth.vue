@@ -1,6 +1,6 @@
 <template>
   <div
-    class="size-full flex flex-col gap-8 justify-center items-center text-theme"
+    class="size-full flex flex-col gap-4 justify-center items-center text-theme"
   >
     <div class="flex flex-col gap-4 items-center" v-if="!pending && user">
       <span class="text-muted text-sm">Logged in as:</span>
@@ -37,7 +37,7 @@
       <NuxtLink
         :to="`a.ni.me://callback#${token}`"
         target="_blank"
-        class="flex gap-2 items-center rounded-full text-theme-inverset bg-theme select-none p-2 pr-4 whitespace-nowrap"
+        class="flex gap-2 items-center rounded-full text-theme-inverset bg-theme select-none p-2 pr-4 whitespace-nowrapd"
       >
         <img src="/icon.png" class="size-7 rounded-full" />
         <span class="pb-[2px]">Open in desktop app</span>
@@ -69,6 +69,8 @@
       <LucideLoader class="size-4 animate-spin" />
       <span>Loading</span>
     </span>
+    <div class="w-64 h-[1px] bg-border rounded-full my-2"></div>
+    <NuxtLink to="/" class="text-xs text-muted underline"> Go home </NuxtLink>
   </div>
 </template>
 

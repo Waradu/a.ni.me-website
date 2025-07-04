@@ -3,6 +3,7 @@ export interface Latest {
   notes: string;
   pub_date: string;
   platforms: Record<string, Platform>;
+  prerelease: boolean;
 }
 
 export interface Platform {

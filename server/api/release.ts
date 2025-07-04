@@ -63,6 +63,9 @@ export default defineEventHandler(async (event) => {
     const latest = releases.find((release) => !release.prerelease);
     const latestPrerelease = releases.find((release) => release.prerelease);
 
+    if (latest) latest.prerelease = false;
+    if (latestPrerelease) latestPrerelease.prerelease = true;
+
     if (latest) saveRelease(latest);
     if (latestPrerelease) saveRelease(latestPrerelease);
 

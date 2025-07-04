@@ -4,12 +4,12 @@
       class="flex items-center h-full px-3 bg-elevated border border-border rounded-full text-sm select-none"
       :initial="{ opacity: 0, scale: 0 }"
       :animate="{ opacity: 1, scale: 1 }"
-      v-if="version"
-      :key="date"
-      :title="`Released ${date}`"
+      v-if="!pending && data"
+      :key="data.pub_date"
+      :title="`Released ${relativeTimeFromNow(data.pub_date)}`"
       v-tippy
     >
-      v{{ version != "" ? version : "0.0.0" }} just released 🎉
+      v{{ data.version != "" ? data.version : "0.0.0" }} just released 🎉
     </motion.div>
   </div>
 </template>
@@ -17,20 +17,7 @@
 <script lang="ts" setup>
 import { motion } from "motion-v";
 
-const version = ref("");
-const date = ref("");
-
-onMounted(async () => {
-  try {
-    const data = await fetch("https://a.ni.me-backend.waradu.dev/api/latest");
-    const json = await data.json();
-    version.value = json.version;
-    date.value = relativeTimeFromNow(json.pub_date);
-  } catch {
-    console.log("failed to fetch version");
-    version.value = "A new version";
-  }
-});
+const { data, pending } = useLatest();
 
 function relativeTimeFromNow(dateString: string): string {
   const inputDate = new Date(dateString);
