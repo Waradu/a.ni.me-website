@@ -56,16 +56,26 @@
 </template>
 
 <script lang="ts" setup>
-import { LucideCheck, LucideCopy, LucideLoader, LucideLoader2 } from "lucide-vue-next";
+import { LucideCheck, LucideCopy, LucideLoader } from "lucide-vue-next";
 
 const route = useRoute();
+const router = useRouter();
 
-const token = route.hash.slice(1);
+const tokenCookie = useCookie("a.ni.me-token", { maxAge: 60 * 60 * 8 });
+const token = computed(() => {
+  const hashToken = route.hash.slice(1);
+  if (hashToken) {
+    tokenCookie.value = hashToken;
+    router.push({ hash: "" });
+    return hashToken;
+  }
+  return tokenCookie.value || "";
+});
 
 const copied = ref(false);
 let timeout: NodeJS.Timeout | null = null;
 
-const { data: user, pending, error } = useUser(token);
+const { data: user, pending, error } = useUser(token.value);
 
 watch(error, (err) => {
   if (err) {
@@ -74,7 +84,7 @@ watch(error, (err) => {
 });
 
 const copy = () => {
-  useClipboard().copy(token);
+  useClipboard().copy(token.value);
   copied.value = true;
   if (timeout) {
     clearTimeout(timeout);
