@@ -19,7 +19,7 @@
       <span class="italic">for research purpose</span>
       ones and keep things under control. We won't tell.
     </div>
-    <div class="flex flex-col items-center gap-2" v-if="status == 'success' || status == 'error'">
+    <div class="flex flex-col items-center gap-2 lg:gap-4" v-if="status == 'success' || status == 'error'">
       <div class="flex gap-2 lg:gap-4 flex-col lg:flex-row items-center">
         <NuxtLink
           :to="windowsDownloadUrl"
