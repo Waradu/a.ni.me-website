@@ -1,5 +1,7 @@
 <template>
-  <div class="size-full flex flex-col gap-8 justify-center items-center text-theme">
+  <div
+    class="size-full flex flex-col gap-8 justify-center items-center text-theme"
+  >
     <div class="flex flex-col gap-4 items-center" v-if="!pending && user">
       <span class="text-muted text-sm">Logged in as:</span>
       <div class="flex gap-2 items-center">
@@ -45,8 +47,9 @@
         class="flex gap-2 items-center rounded-full text-alt border border-border select-none p-2 pl-4 whitespace-nowrap"
       >
         <input
-          class="pb-[2px] max-w-48 overflow-hidden overflow-x-auto outline-none border-none"
+          class="pb-[2px] max-w-48 overflow-hidden overflow-x-auto outline-none border-none transition-[filter] blur-xs focus:blur-none"
           :value="token"
+          ref="input"
           readonly
         />
         <div
@@ -97,8 +100,11 @@ watch(error, (err) => {
   }
 });
 
+const input = ref<HTMLInputElement | null>(null);
+
 const copy = () => {
   useClipboard().copy(token.value);
+  input.value?.select();
   copied.value = true;
   if (timeout) {
     clearTimeout(timeout);
