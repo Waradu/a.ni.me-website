@@ -10,9 +10,25 @@
         />
         <div class="flex flex-col">
           <div class="text-xl">{{ user.name }}</div>
-          <a href="/api/auth" class="text-xs text-muted underline -mt-1">
-            use another account?
-          </a>
+          <div class="-mt-2">
+            <Tippy placement="bottom">
+              <a href="/api/auth" class="text-xs text-muted underline">
+                use another account?
+              </a>
+              <template #content>
+                <span>
+                  If you're redirected right away, go to
+                  <a
+                    href="https://anilist.co"
+                    class="text-neutral-300 underline"
+                    target="_blank"
+                  >
+                    Anilist</a
+                  >, login with another account, and try again.
+                </span>
+              </template>
+            </Tippy>
+          </div>
         </div>
       </div>
       <div class="w-64 h-[1px] bg-border rounded-full my-2"></div>
@@ -42,7 +58,7 @@
         </div>
       </div>
     </div>
-    <span v-else-if="error">
+    <span v-else-if="error" :title="error.message" v-tippy>
       An error occurred while logging in.
       <a href="/api/auth" class="text-muted underline"> Try again? </a>
     </span>
