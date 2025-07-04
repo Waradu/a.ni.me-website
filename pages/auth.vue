@@ -53,7 +53,7 @@
           readonly
         />
         <div
-          class="size-7 flex items-center justify-center transition hover:bg-neutral-200 rounded-full"
+          class="size-7 flex items-center justify-center transition hover:bg-theme/10 rounded-full"
           @click="copy"
         >
           <LucideCheck class="size-3.5" v-if="copied" />
