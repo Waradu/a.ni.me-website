@@ -1,5 +1,5 @@
 <template>
-  <div class="size-full flex flex-col gap-8 justify-center items-center">
+  <div class="size-full flex flex-col gap-8 justify-center items-center text-theme">
     <div class="flex flex-col gap-4 items-center" v-if="!pending && user">
       <span class="text-muted text-sm">Logged in as:</span>
       <div class="flex gap-2 items-center">
