@@ -19,26 +19,32 @@
       <span class="italic">for research purpose</span>
       ones and keep things under control. We won't tell.
     </div>
-    <div
-      class="flex gap-2 lg:gap-4 flex-col lg:flex-row items-center"
-      v-if="status == 'success' || status == 'error'"
-    >
-      <NuxtLink
-        :to="windowsDownloadUrl"
-        target="_blank"
-        class="flex gap-2 items-center rounded-lg text-theme-inverset bg-theme select-none px-4 py-3 whitespace-nowrap"
-      >
-        <Windows class="size-4" /> Download for Windows
-      </NuxtLink>
-      <div
-        class="flex gap-2 items-center rounded-lg text-alt select-none px-4 py-3 whitespace-nowrap"
-      >
-        <Apple class="size-4" /> Mac coming soon
+    <div class="flex flex-col items-center gap-2" v-if="status == 'success' || status == 'error'">
+      <div class="flex gap-2 lg:gap-4 flex-col lg:flex-row items-center">
+        <NuxtLink
+          :to="windowsDownloadUrl"
+          target="_blank"
+          class="flex gap-2 items-center rounded-lg text-theme-inverset bg-theme select-none px-4 py-3 whitespace-nowrap"
+        >
+          <Windows class="size-4" /> Download for Windows
+        </NuxtLink>
+        <div
+          class="flex gap-2 items-center rounded-lg text-alt select-none px-4 py-3 whitespace-nowrap"
+        >
+          <Apple class="size-4" /> Mac coming soon
+        </div>
       </div>
+      <NuxtLink
+        to="https://github.com/Waradu/a.ni.me/releases"
+        class="text-muted/50 underline text-xs"
+        target="_blank"
+      >
+        All downloads here
+      </NuxtLink>
     </div>
     <span class="flex gap-2 items-center text-muted" v-else>
       <LucideLoader class="size-4 animate-spin" />
-      <span>Loading</span>
+      <span>Loading downloads</span>
     </span>
   </section>
 </template>
