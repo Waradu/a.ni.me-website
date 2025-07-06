@@ -16,7 +16,7 @@
         alt="app preview"
         width="900"
         height="484"
-        class="min-w-[900px] min-h-[484px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-xl shadow-[0_4px_10px_-1px_rgba(0,0,0,0.125)] block dark:hidden"
+        class="min-w-[900px] min-h-[484px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-md shadow-[0_4px_10px_-1px_rgba(0,0,0,0.125)] block dark:hidden"
         loading="eager"
       />
       <img
@@ -24,7 +24,7 @@
         alt="app preview dark"
         width="900"
         height="484"
-        class="min-w-[900px] min-h-[484px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-xl hidden dark:block"
+        class="min-w-[900px] min-h-[484px] relative z-20 border border-border pointer-events-none backdrop-blur-xs rounded-md hidden dark:block"
         loading="eager"
       />
     </div>
