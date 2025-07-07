@@ -25,7 +25,7 @@
       />
     </div>
     <div class="w-32 flex justify-end">
-      <NuxtLink to="https://github.com/waradu/a.ni.me" target="_blank">
+      <NuxtLink to="https://github.com/waradu/a.ni.me" target="_blank" aria-label="GitHub">
         <SvglGitHubLogo
           class="!size-5 dark:invert transition hover:text-theme"
         />

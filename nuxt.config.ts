@@ -108,4 +108,17 @@ export default defineNuxtConfig({
     preference: "light",
     fallback: "light",
   },
+
+  seo: {
+    meta: {
+      title: "A • NI • ME",
+      description:
+        "Organize your anime list, hide the guilty pleasures, and keep track.",
+      ogSiteName: "a.ni.me",
+      ogImage: "/icon.png",
+      twitterCard: "summary_large_image",
+      themeColor: "#ffffff",
+      keywords: "anime, tracker, list",
+    }
+  },
 });

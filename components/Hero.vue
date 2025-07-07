@@ -36,7 +36,7 @@
       </div>
       <NuxtLink
         to="https://github.com/Waradu/a.ni.me/releases"
-        class="text-muted/50 underline text-xs"
+        class="text-muted/70 underline text-xs"
         target="_blank"
       >
         All downloads here
